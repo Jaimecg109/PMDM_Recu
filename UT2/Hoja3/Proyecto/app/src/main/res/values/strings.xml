@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App_UT2_02</string>
+    <string name="mostrar_toast">Mostrar Toast</string>
+    <string name="contar">Contar</string>
+</resources>
