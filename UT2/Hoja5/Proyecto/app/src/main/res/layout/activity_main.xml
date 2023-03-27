@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/nombreYApellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_y_apellidos"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/presupuesto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:hint="@string/presupuesto"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreYApellidos" />
+
+    <TextView
+        android:id="@+id/textViewDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/pregunta_destino"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/presupuesto" />
+
+    <RadioGroup
+        android:id="@+id/opcionViaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/opcion_peninsula"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDestino">
+
+        <RadioButton
+            android:id="@+id/opcion_peninsula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/costa_peninsular" />
+
+        <RadioButton
+            android:id="@+id/opcion_islas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/costa_insular" />
+
+        <RadioButton
+            android:id="@+id/opcion_interior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/turismo_de_interior" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch_iva"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:checked="true"
+        android:minHeight="48dp"
+        android:text="@string/IVA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opcionViaje" />
+
+    <Button
+        android:id="@+id/boton_mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mostrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_iva" />
+
+    <TextView
+        android:id="@+id/precio_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/precio_final"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_iva" />
+
+    <ImageView
+        android:id="@+id/imageViewDestino"
+        android:layout_width="388dp"
+        android:layout_height="270dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
