@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FragmentPersonas">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientatio="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewAdultos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="50dp"
+                android:text="adultos"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                app:layout_constraintBottom_toBottomOf="@+id/numberPickerAdultos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/numberPickerAdultos"/>
+            <NumberPicker
+                android:id="@+id/numberPickerAdultos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/textViewNinos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="50dp"
+                android:text="niñoc"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                app:layout_constraintBottom_toBottomOf="@+id/numberPickerNinos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/numberPickerNinos"/>
+            <NumberPicker
+                android:id="@+id/numberPickerNinos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/numberPickerAdultos"/>
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="50dp"
+                android:text="precio total"
+                android:textAppearance="?attr/TextAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numberPickerNinos"/>
+            <Button
+                android:id="@+id/botonSiguiente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="siguiente"
+                app:layout_constraintTop_toBottomOf="@id/total"
+                app:layout_editor_absoluteX="16dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
