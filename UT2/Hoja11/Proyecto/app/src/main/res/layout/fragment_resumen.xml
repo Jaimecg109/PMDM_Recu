@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".FragmentResumen">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="es.jaimedecos.app_ut2_06.modelo.ReservaZooViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
