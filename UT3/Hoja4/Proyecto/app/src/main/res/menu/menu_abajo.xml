@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/localizacion"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="@string/opcion_localizacion" />
+    <item
+        android:id="@+id/mapa"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="@string/opcion_mapa" />
+</menu>

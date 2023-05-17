@@ -18,8 +18,8 @@ class EquiposAdapter(val viewModel: EquiposViewModel)
         class EquipoViewHolder(view: View)
             :RecyclerView.ViewHolder(view)
         {
-                val nombre = view.findViewById<TextView>(R.id.textViewNombre)
-                val bandera = view.findViewById<ImageView>(R.id.imagenBandera)
+                val nombre = view.findViewById<TextView>(R.id.textViewEquipo)
+                val bandera = view.findViewById<ImageView>(R.id.imageViewBandera)
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipoViewHolder {
@@ -32,7 +32,7 @@ class EquiposAdapter(val viewModel: EquiposViewModel)
     override fun getItemCount(): Int = equipos.size
 
     override fun onBindViewHolder(holder: EquipoViewHolder, position: Int) {
-        val equipo = equipos[position]
+        val equipo = equipos.get(position)
         holder.nombre.text = equipo.pais
         holder.bandera.setImageResource(equipo.imagen)
     }

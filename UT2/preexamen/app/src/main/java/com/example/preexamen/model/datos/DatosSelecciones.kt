@@ -4,7 +4,7 @@ import com.example.preexamen.R
 import com.example.preexamen.model.Equipo
 
 object DatosSelecciones {
-    private val equipos = listOf<Equipo>(
+     val equipos = listOf<Equipo>(
         Equipo("Qatar", "Félix Sánchez ha logrado armar un equipo de la nada que fue campeón asiático y que juega bastante bien. El mejor de Asia en este aspecto. Tiene futbolistas de mucho talento (Afif, el lateral Pedro Miguel...), pero le falta experiencia internacional. Se le ve muy bisoño contra equipos más rodados. Qatar juega en casa y eso será una lanza a favor o en contra... dependiendo de la mentalidad de sus jugadores. Dicho todo eso, no es un rival temible mundialmente.",
             R.drawable.qat
         ),
@@ -109,8 +109,4 @@ object DatosSelecciones {
             R.drawable.kor
         )
     );
-    fun equipos(): List<Equipo>
-    {
-        return equipos;
-    }
 }
