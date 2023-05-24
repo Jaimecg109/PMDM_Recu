@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">App_04_03</string>
+    <string name="informacion">informacion</string>
+    <string name="listado_de_peliculas">Listado de peliculas</string>
+    <string name="insertar_pelicula">insertar pelicula</string>
+    <string name="peliculas">Peliculas</string>
+    <string name="favoritas">Favoritas</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
