@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/grafico_navegacion.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grafico_navegacion.xml"
+    app:startDestination="@id/fragmenteListaPeliculas">
 
+    <fragment
+        android:id="@+id/fragmenteListaPeliculas"
+        android:name="com.example.app_04_03.view.FragmenteListaPeliculas"
+        android:label="fragment_fragmente_lista_peliculas"
+        tools:layout="@layout/fragment_fragmente_lista_peliculas" >
+        <action
+            android:id="@+id/action_fragmenteListaPeliculas_to_fragmentDetalle"
+            app:destination="@id/fragmentDetalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetalle"
+        android:name="com.example.app_04_03.view.FragmentDetalle"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_fragmentDetalle_to_fragmenteListaPeliculas"
+            app:destination="@id/fragmenteListaPeliculas" />
+        <argument
+            android:name="pelicula"
+            app:argType="com.example.app_04_03.model.Pelicula" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentNuevaPelicula"
+        android:name="com.example.app_04_03.view.FragmentNuevaPelicula"
+        android:label="fragment_nueva_pelicula"
+        tools:layout="@layout/fragment_nueva_pelicula" >
+        <action
+            android:id="@+id/action_fragmentNuevaPelicula_to_fragmenteListaPeliculas"
+            app:destination="@id/fragmenteListaPeliculas" />
+    </fragment>
 </navigation>

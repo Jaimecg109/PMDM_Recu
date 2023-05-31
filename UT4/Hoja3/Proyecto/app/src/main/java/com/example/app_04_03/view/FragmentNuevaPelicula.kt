@@ -5,56 +5,60 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import coil.load
 import com.example.app_04_03.R
+import com.example.app_04_03.databinding.FragmentDetalleBinding
+import com.example.app_04_03.databinding.FragmentNuevaPeliculaBinding
+import com.example.app_04_03.model.Pelicula
+import com.example.app_04_03.viewmodel.PeliculasViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentNuevaPelicula.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentNuevaPelicula : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
+    private val peliculasViewModel: PeliculasViewModel by activityViewModels{ PeliculasViewModel.Factory}
+
+    private lateinit var binding: FragmentNuevaPeliculaBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentNuevaPeliculaBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nueva_pelicula, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentNuevaPelicula.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentNuevaPelicula().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.editTextImagen.setOnFocusChangeListener { _, foco ->
+            if(!foco &&
+                    binding.editTextImagen.text.toString().isNotEmpty())
+            {
+                val userAgent = "Mozilla/5.0 (X11; Linux x86_64)" +
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0" +
+                        "Safari/537.36"
+                val url = binding.editTextImagen.text.toString()
+                binding.imageViewPelicula.load(url)
+                {
+                    addHeader("User-Agent", userAgent)
                 }
             }
+        }
+        binding.btnInsertar.setOnClickListener {
+            val titulo = binding.editTextTitulo.text.toString()
+            val anyo = Integer.parseInt(binding.editTextAnno.text.toString())
+            val director = binding.editTextDirector.text.toString()
+            val puntuacion = binding.editTextAnno.text.toString().toFloat()
+            val imagen = binding.editTextImagen.text.toString()
+            val sinopsis = binding.editTextSinopsis.text.toString()
+            peliculasViewModel.insertarPelicula(
+                Pelicula(0, titulo, anyo, director, puntuacion, imagen, sinopsis, false)
+            )
+            view.findNavController().navigate(R.id.fragmenteListaPeliculas)
+        }
     }
+
 }

@@ -11,7 +11,7 @@ import com.example.app_04_03.model.Pelicula
 @Dao
 interface PeliculaDao
 {
-    @Query("SELECT * FROM peliculas ORDER BY puntos ASC")
+    @Query("SELECT * FROM peliculas WHERE favorita = 0 ORDER BY puntos ASC")
     fun getPeliculas(): LiveData<List<Pelicula>>
 
     @Query("SELECT * FROM peliculas WHERE favorita = 1")

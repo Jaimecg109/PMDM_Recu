@@ -6,12 +6,14 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "peliculas")
 data class Pelicula(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey(autoGenerate = false)
+    val id: Long,
 
     val titulo: String,
 
-    val director: String,
+    val anyo: Int,
+
+    val director: String?,
 
     @ColumnInfo(name = "puntos")
     val puntuacion: Float,

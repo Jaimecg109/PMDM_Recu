@@ -27,6 +27,7 @@ class AnimalAdapter(private val listaAnimales: List<Animal>,
             //binding.imageViewFotoAnimal.setImageResource(animal.imagenURL)
             binding.textViewVotos.text = "${animal.votos} ${if(animal.votos==1) "voto" else "votos"}"
             binding.layout.setOnClickListener { onClickAnimal(animal) }
+
         }
     }
 

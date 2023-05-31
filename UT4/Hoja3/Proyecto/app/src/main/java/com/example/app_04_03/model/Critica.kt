@@ -19,6 +19,7 @@ data class Critica(
     @PrimaryKey(autoGenerate = true)
     val id:Long,
     val texto:String,
+    val valoracion: String,
 
     @ColumnInfo(name = "pelicula_id")
     val peliculaId:Long
